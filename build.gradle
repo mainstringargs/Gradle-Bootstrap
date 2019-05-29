@@ -28,7 +28,7 @@ apply plugin: 'com.bmuschko.nexus'
 
 archivesBaseName = 'gradle-project-bootstrap'
 group = 'io.github.mainstringargs'
-version = '1.0'
+version = '1.0.0'
 
 
 sourceCompatibility = '1.8'
@@ -105,4 +105,8 @@ nexus {
 
 nexusStaging {
     packageGroup = "io.github.mainstringargs" //optional if packageGroup == project.getGroup()
+}
+
+if (hasProperty('buildScan')) {
+	buildScan { licenseAgreementUrl = 'https://gradle.com/terms-of-service'; licenseAgree = 'yes' }
 }
